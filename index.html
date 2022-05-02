@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" type="text/javascript"></script>
+    <title>MusicDJ</title>
+</head>
+
+<body onload="InitializeDocument();">
+    <div class="composer">
+        <div class="composer-icons">
+            <span class="tooltip">
+                <img onclick="SelectTrack(0);" src="media/drums.png">
+                <span class="tooltiptext">Drums</span>
+            </span><br>
+            <span class="tooltip">
+                <img onclick="SelectTrack(1);" src="media/bass.png">
+                <span class="tooltiptext">Bass</span>
+            </span><br>
+            <span class="tooltip">
+                <img onclick="SelectTrack(2);" src="media/accords.png">
+                <span class="tooltiptext">Chords</span>
+            </span><br>
+            <span class="tooltip">
+                <img onclick="SelectTrack(3);" src="media/accents.png">
+                <span class="tooltiptext">Accents</span>
+            </span>
+        </div>
+        <div id="composer" class="row-container">
+            <div class="composer-row">
+            </div>
+            <div class="composer-row">
+            </div>
+            <div class="composer-row">
+            </div>
+            <div class="composer-row">
+            </div>
+        </div>
+    </div>
+
+    <button class="to-be-disabled" onclick="Play();">
+        <img src="media/play_arrow-24px.svg">
+        <br>
+        Play
+    </button>
+
+    <button onclick="PlayerStop();">
+        <img src="media/stop-24px.svg">
+        <br>
+        Stop
+    </button>
+
+    <button onclick="Clear();" class="to-be-disabled">
+        <img src="media/delete_forever-24px.svg">
+        <br>
+        Delete
+    </button>
+
+    <button onclick="ClpbrdMng('copy');" class="to-be-disabled">
+        <img src="media/content_copy-24px.svg">
+        <br>
+        Copy
+    </button>
+
+    <button onclick="ClpbrdMng('paste');" class="to-be-disabled">
+        <img src="media/content_paste-24px.svg">
+        <br>
+        Paste
+    </button>
+    
+    <button class="to-be-disabled">
+        <label for="file-load">
+            <img src="media/folder_open_black_24dp.svg">
+            <br>
+            Open
+        </label>
+    </button>
+
+    <button onclick="SaveAs();" class="to-be-disabled">
+        <img src="media/save_black_24dp.svg">
+        <br>
+        Save
+    </button>
+
+    <p id="selected-segment">Selected sequence</p>
+    <select class="to-be-disabled" onchange="UpdateTracks();" id="type-select" size="10">
+        <option value="0">Intro</option>
+        <option value="1">Verse</option>
+        <option value="2">Chorus</option>
+        <option value="3">Break</option>
+    </select>
+    <select class="to-be-disabled" onchange="UpdateTracks();" id="sound-select" size="10">
+        <option value="none">(empty)</option>
+        <option value="0">Groove 1</option>
+        <option value="1">Groove 2</option>
+        <option value="2">Salsa 1</option>
+        <option value="3">Salsa 2</option>
+        <option value="4">Reggae 1</option>
+        <option value="5">Reggae 2</option>
+        <option value="6">Techno 1</option>
+        <option value="7">Techno 2</option>
+    </select>
+
+    <br><br>
+
+    <button class="to-be-disabled" onclick="TestSound();">Play sound</button>
+
+    <br><br>
+
+    <input onclick="Stop = true;" id="file-load" type="file">
+</body>
+
+</html>

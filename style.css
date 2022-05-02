@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body {
+    text-align: center;
+    font-family: "Noto Sans", sans-serif;
+    padding: 10px;
+}
+
+button {
+    font-family: inherit;
+    width: 100px;
+}
+
+label {
+    display: block;
+    width: 100%;
+}
+
+button>img {
+    padding:0 20px;
+}
+
+button:disabled img {
+    opacity:30%;
+}
+
+select {
+    font-family: "Noto Sans", sans-serif;
+    width: 200px;
+    overflow-y: auto;
+}
+
+select:focus {
+    outline: none;
+}
+
+.composer {
+    position:relative;
+    margin-bottom: 20px;
+    padding:10px;
+}
+
+.composer-row {
+    padding:0;
+    border: 1px solid black;
+    margin-top: -1px;
+    width:10px;
+    height:40px;
+}
+
+.row-container{
+    padding:10px;
+    overflow-x:scroll;
+    overflow-y:hidden;
+}
+
+.composer-icons {
+    float: left;
+    background: white;
+    margin-top: 10px;
+}
+
+.composer-icons img {
+    padding:7px;
+}
+
+.segment {
+    width:40px;
+    height:100%;
+    display:inline-block;
+    cursor:default;
+    text-align:center;
+}
+
+.segment:hover {
+    background: rgb(228, 228, 228);
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(221, 221, 221);
+    text-align: center;
+    padding: 2px 4px;
+    position: absolute;
+    z-index: 1;
+    font-size: 13px;
+    margin-left: 10px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.521);
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.note {
+    font-size: 12px;
+}
+
+@keyframes selected {
+    from{
+        background: rgb(228, 228, 228);
+    }
+    to{
+        background: inherit;
+    }
+}
+
+@keyframes playhead {
+    from{
+        background: rgb(255, 238, 182);
+    }
+    to{
+        background: rgb(255, 238, 182);
+    }
+}
+
+#file-load {
+    display: none;
+}
